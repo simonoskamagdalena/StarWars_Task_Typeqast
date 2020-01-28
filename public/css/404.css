@@ -1,0 +1,43 @@
+@font-face {
+    font-family: "StarWars";
+    src: url("../fonts/webfontkit-20200119-165610/sfdistantgalaxyalternateitalic-3rdm.woff");
+    src: url("../fonts/webfontkit-20200119-165610/sfdistantgalaxyalternateitalic-3rdm.woff2") format("woff");
+}
+
+
+body {
+    background-color: #000;
+}
+
+.header, a, a:link, a:visited {
+    font-family: "StarWars";
+    z-index: 2;
+    color: white;
+    margin-top: 10%;
+}
+
+canvas {
+    padding: 20px 0 0 0;
+    margin: auto;
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+}
+
+@media only screen and (max-width: 600px) {
+    .header, a, a:link, a:visited {
+        font-family: "StarWars";
+        z-index: 2;
+        color: white;
+        margin-top: 40%;
+    }
+    canvas {
+
+        display: none;
+
+    }
+}

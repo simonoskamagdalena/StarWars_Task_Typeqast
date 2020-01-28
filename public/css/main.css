@@ -1,0 +1,615 @@
+@font-face {
+    font-family: "StarWars";
+    src: url("../fonts/webfontkit-20200119-165610/sfdistantgalaxyalternateitalic-3rdm.woff");
+    src: url("../fonts/webfontkit-20200119-165610/sfdistantgalaxyalternateitalic-3rdm.woff2") format("woff");
+}
+
+
+.menu {
+    font-family: 'StarWars';
+    margin: 2% 3%;
+}
+
+.menu ul li img {
+    width: 20%;
+}
+
+.menu ul li {
+    width: inherit;
+}
+
+.menu li {
+    display: inline-block;
+    padding: 0 1%;
+}
+
+.router-link-active{
+    color:#feda4a;
+}
+
+.loader {
+    margin-top: 17%;
+    /*background: url("../images/starwars/robo.gif") no-repeat;*/
+}
+
+/* ---- reset ---- */
+
+
+body {
+    background: radial-gradient(#000, #222);
+    min-height: 100vh;
+}
+
+
+canvas {
+    display: block;
+    vertical-align: bottom;
+}
+
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+    position: relative;
+    margin: 0;
+    background-color: #17182f;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+
+}
+
+#app {
+    position: absolute;
+    background: transparent;
+}
+
+a {
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #8c93bd;
+}
+
+table {
+    font-family: 'Open Sans', sans-serif;
+    width: 750px;
+    border-collapse: collapse;
+    border: 3px solid #383838;
+    margin: 100px 10px 0 10px;
+}
+
+table th {
+    text-transform: uppercase;
+    text-align: left;
+    background: #383838;
+    color: #FFF;
+    cursor: pointer;
+    padding: 8px;
+    min-width: 30px;
+}
+
+table td {
+    text-align: left;
+    padding: 8px;
+    border-right: 2px solid #383838;
+}
+
+table td:last-child {
+    border-right: #383838;
+}
+
+table tbody tr:nth-child(2n) td {
+    background: rgba(0, 0, 0, 0.33);
+}
+
+table {
+    font-family: 'Open Sans', sans-serif;
+    width: 750px;
+    border-collapse: collapse;
+    border: 3px solid #383838;
+    margin: 10px 10px 0 10px;
+}
+
+table th {
+    text-transform: uppercase;
+    text-align: left;
+    background: #383838;
+    color: #FFF;
+    padding: 8px;
+    min-width: 30px;
+}
+
+table th:hover {
+    background: rgba(177, 177, 177, 0.64);
+}
+
+table td {
+    text-align: left;
+    padding: 8px;
+    border-right: 2px solid #383838;
+}
+
+table td:last-child {
+    border-right: 3px solid #383838;
+}
+
+table tbody tr:nth-child(2n) td {
+    background: rgba(0, 0, 0, 0.33);
+}
+
+table td h3 {
+    color: white;
+}
+
+.arrow_down {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAaCAYAAABPY4eKAAAAAXNSR0IArs4c6QAAAvlJREFUSA29Vk1PGlEUHQaiiewslpUJiyYs2yb9AyRuJGm7c0VJoFXSX9A0sSZN04ULF12YEBQDhMCuSZOm1FhTiLY2Rky0QPlQBLRUsICoIN/0PCsGyox26NC3eTNn3r3n3TvnvvsE1PkwGo3yUqkkEQqFgw2Mz7lWqwng7ztN06mxsTEv8U0Aam5u7r5EInkplUol/f391wAJCc7nEAgE9Uwmkzo4OPiJMa1Wq6cFs7Ozt0H6RqlUDmJXfPIx+qrX69Ti4mIyHA5r6Wq1egND+j+IyW6QAUoul18XiUTDNHaSyGazKcZtdgk8wqhUKh9o/OMvsVgsfHJy0iWqVrcQNRUMBnd6enqc9MjISAmRP3e73T9al3XnbWNjIw2+KY1Gc3imsNHR0YV4PP5+d3e32h3K316TySQFoX2WyWR2glzIO5fLTSD6IElLNwbqnFpbWyO/96lCoai0cZjN5kfYQAYi5H34fL6cxWIZbya9iJyAhULBHAqFVlMpfsV/fHxMeb3er+Vy+VUzeduzwWC45XA4dlD/vEXvdDrj8DvURsYEWK3WF4FA4JQP9mg0WrHZbEYmnpa0NxYgPVObm5teiLABdTQT8a6vrwdRWhOcHMzMzCiXlpb2/yV6qDttMpkeshEzRk4Wo/bfoe4X9vb2amzGl+HoXNT29vZqsVi0sK1jJScG+Xx+HGkL4Tew2TPi5zUdQQt9otPpuBk3e0TaHmMDh1zS7/f780S0zX6Yni+NnBj09fUZUfvudDrNZN+GkQbl8Xi8RLRtHzsB9Hr9nfn5+SjSeWUCXC7XPq5kw53wsNogjZNohYXL2EljstvtrAL70/mVaW8Y4OidRO1/gwgbUMvcqGmcDc9aPvD1gnTeQ+0nmaInokRj0nHh+uvIiVOtVvt2a2vLv7Ky0tL3cRTXIcpPAwMDpq6R4/JXE4vFQ5FI5CN+QTaRSFCYc8vLy1l0rge4ARe5kJ/d27kYkLXoy2Jo4C7K8CZOsEBvb+9rlUp1xNXPL7v3IDwxvPD6AAAAAElFTkSuQmCC')
+}
+
+.arrow_up {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAaCAYAAACgoey0AAAAAXNSR0IArs4c6QAAAwpJREFUSA21Vt1PUmEYP4dvkQ8JFMwtBRocWAkDbiqXrUWXzU1rrTt0bdVqXbb1tbW16C9IBUSmm27cODdneoXjputa6069qwuW6IIBIdLvdaF4OAcOiGeDc87zPs/vd57P96WpFq7p6enbGo1mjKZpeTabjU1MTCRagGnOZHFxcXxtbe1XKpUq7+zslJeXl//Mz8+Hy+Uy3RxSE9qTk5M3otFooVQqgef4Wl9f343FYoEmoISrxuNxFX5f9vb2jhn/PxUKhfLS0tIPfFifUESRUMV8Pv/M6XReRm5rTGQyGeXxeGxYe1ezeBpBOBx2rKysbO7v79d4Wy3Y2Nj4GQqFbgnhaugxwiuGJx99Pp9FLBbXxYTXvTqd7v3MzIy6riIWGxJnMpl7AwMD14xGYyMsSq1WUyQdUqn0eSPlusQIsbGrq+vl4OCgvhFQZd1utyv1en0gEolcqsi47nWJlUrlG5fLZVcoFFy2nDKSDpIWlUoVTCQSEk4lCHmJMZ2GTCbTiMVikfIZ88l7enoos9l8dXt7+z6fDicxSJUokqDX6xXcl2wCROoc0vQCWL3sNfLOSdzR0fHY4XC4tVotl40gmVwup9xuN4OQv+UyqCFGH9rg7SOGYVRcBs3IEG4J0nVnamrqOtvuBDGGgQg9+wHFcVEi4a0LNkbdd6TrPKo8ODc311mteIIYjT/a398/jK+s1jnVM0kXoufCFvq0GuiIGEVgQIhfoygM1QrteEa9dAL7ITiYCt4RMabOK5AyKKzKWtvupLcRciu8D5J0EuDDPyT/Snd39yh6VtY2NhYQSR9G79Ds7OxdskRjEyAufvb7/cPoO5Z6e1+xtVKrq6vfcFzyi/A3ZrPZ3GdNSlwgo5ekE4X2RIQGf2C1WlufFE0GBeGWYQ8YERWLxQtnUVB830MKLZfL9RHir8lkssCn2G751tZWEWe03zTKm15YWPiEiXXTYDB0Ig/t7yd8PRws4EicwWHxO4jHD8/C5HiTTqd1BwcHFozKU89origB+y/kmzgYpgOBQP4fGmUiZmJ+WNgAAAAASUVORK5CYII=')
+}
+
+.arrow {
+    float: right;
+    width: 12px;
+    height: 15px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: bottom;
+}
+
+.navigate_table td {
+    text-transform: uppercase;
+    background: #383838;
+    color: #FFF;
+    cursor: pointer;
+    padding: 8px;
+
+}
+
+.navigate_table td:hover {
+    background: rgba(177, 177, 177, 0.64);
+
+}
+
+.navigate_table td:not([align]) {
+    text-align: center;
+}
+
+.filter {
+    color: white;
+    margin-top:5%;
+
+}
+
+/*html{*/
+/*overflow: hidden;*/
+/*}*/
+
+
+.menu-mob-device {
+    display: none;
+}
+
+h1,p{
+    color:white;
+}
+
+.left_align{
+    margin:5% 0 0 5%;
+}
+.left_align p{
+    padding: 5px;
+}
+
+.info{
+    color: white;
+    margin:4% 0 0 4%;
+}
+.info h1{
+    font-size: large;
+    padding-bottom:4%;
+    font-weight: bold;
+}
+
+.info div, .filter p{
+    padding-bottom:2%;
+}
+
+
+@media only screen and (min-width: 768px) {
+    html{
+        overflow: hidden;
+    }
+    #mobile-search {
+        display: none;
+        visibility: hidden;
+    }
+
+    /*OPENIG CRAWL IN FILM IFO*/
+    body{
+        /*overflow: hidden;*/
+    }
+
+    h1,p{
+        color: white;
+    }
+    .fade {
+        position: relative;
+        width: 100%;
+        min-height: 60vh;
+        top: -25px;
+        /*background-image: linear-gradient(0deg, transparent, black 75%);*/
+        z-index: 1;
+    }
+
+    .star-wars {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        height: 800px;
+        color: #feda4a;
+        font-family: 'Pathway Gothic One', sans-serif;
+        font-size: 500%;
+        font-weight: 600;
+        letter-spacing: 6px;
+        line-height: 150%;
+        perspective: 400px;
+        text-align: justify;
+    }
+
+    .crawl {
+        position: relative;
+        top: 9999px;
+        transform-origin: 50% 100%;
+        animation: crawl 40s linear;
+    }
+
+    .crawl > .title {
+        font-size: 90%;
+        text-align: center;
+        color: #feda4a;
+
+    }
+
+    .title h1, .title p{
+        color: #feda4a;
+    }
+
+    .crawl > .title h1 {
+        margin: 0 0 100px;
+        text-transform: uppercase;
+        color: #feda4a;
+
+    }
+
+    @keyframes crawl {
+        0% {
+            top: 0;
+            transform: rotateX(20deg)  translateZ(0);
+        }
+        100% {
+            top: -6000px;
+            transform: rotateX(25deg) translateZ(-2500px);
+        }
+    }
+
+    #film_max_768{
+        display: none;
+    }
+    #film_min_768{
+        display: block;
+    }
+
+
+    #skip{
+        display: none;
+        position:absolute;
+    }
+
+    .filter{
+        margin:4% 0 4% 0;
+        color:white;
+    }
+
+    .storm-troopers{
+        margin-top:2%;
+        width:70%;
+        height: auto;
+    }
+
+    .center_element{
+        width: 50%;
+        margin:13% auto auto 40%;
+    }
+    .center_element p{
+        padding: 5px;
+    }
+
+
+
+    @keyframes float {
+        0% {
+            box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+            transform: translatey(0px);
+        }
+        50% {
+            box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+            transform: translatey(-20px);
+        }
+        100% {
+            box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+            transform: translatey(0px);
+        }
+    }
+
+
+    .floating_planets{
+        display: block;
+    }
+    .container {
+        width: 100%;
+        height: auto;
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        /*justify-content: center;*/
+        /*align-items: center;*/
+    }
+
+    .character {
+        position: absolute;
+        top: 60%;
+        left: 15%;
+        z-index: 2;
+    }
+
+    .planet {
+        position: absolute;
+        top: 30%;
+        left: 75%;
+        z-index: 1;
+
+    }
+
+    .starship {
+        position: absolute;
+        top: 10%;
+        left: 30%;
+        z-index: 1;
+
+    }
+
+    .planet2 {
+        position: absolute;
+        top: 110%;
+        left: 50%;
+        z-index: 1;
+
+    }
+
+    .planet3 {
+        position: absolute;
+        top: 60%;
+        left: 5%;
+        z-index: 2;
+
+    }
+
+
+    .avatar {
+        width: 150px;
+        height: 150px;
+        box-sizing: border-box;
+        border: 5px white solid;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .avatar img {
+        width: 100%;
+        height: auto;
+    }
+
+    .content {
+        width: 100%;
+        max-width: 600px;
+        padding: 20px 40px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    .planetTask{
+        position: absolute;
+        top: 20%;
+        left: 75%;
+        z-index: 1;
+        font-family:"Arial";
+        text-align: center;
+    }
+
+    .form{
+        margin-top:25%;
+    }
+
+    .form select, .form input{
+        background: transparent;
+        color:white;
+        width:100%;
+        border: none;
+        text-align:center;
+
+    }
+    .form select{
+        width:80%;
+    }
+    .form option{
+        background: transparent;
+        color:black;
+    }
+
+    .form button{
+        position: absolute;
+        top:70%;
+        right:0%;
+        background: white;
+        color:black;
+        width:100%;
+        height:35%;
+        border-radius: 300%;
+    }
+
+    .search input{
+        background: transparent;
+        color: white;
+        font-family: "StarWars";
+
+    }
+    .search input[type=submit]{
+        background: transparent;
+        color: white;
+        font-family: "StarWars";
+        border:none;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 768px) {
+    .menu {
+        display: none;
+    }
+
+    .tables {
+        margin-right: 5%;
+        color:white;
+    }
+
+    .menu-mob-device {
+        display: block;
+        /*overflow: hidden;*/
+        background-color: transparent;
+        position: relative;
+        text-align-all: center;
+        margin: 5% 0 5% 0;
+    }
+
+    .menu-mob-device img {
+        width: 40%;
+    }
+
+    .topnav #myLinks {
+        display: none;
+    }
+
+    .topnav a {
+        color: white;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+    }
+
+    #mobile-search {
+        display: none;
+        margin: 10% 0 5% 0;
+        text-align: center;
+    }
+
+    #mobile-search form input{
+        background: transparent;
+        color: white ;
+    }
+
+
+    table {
+        width: 100%;
+    }
+
+    .icon {
+        margin: 3%;
+        color: white;
+    }
+
+    /*table {*/
+    /*border: 1px solid #000;*/
+    /*}*/
+    /*table th {*/
+    /*text-align: left;*/
+    /*}*/
+
+    #film_min_768{
+        display: none;
+    }
+    #film_max_768{
+        display: block;
+    }
+
+    #skip{
+        display: none;
+    }
+
+    .storm-troopers{
+        margin-top:2%;
+        /*width:70%;*/
+        /*height: auto;*/
+    }
+
+    .floating_planets{
+        display: none;
+    }
+
+
+    .center_element{
+        width: 50%;
+        margin:10% auto auto 30%;
+    }
+    .center_element p{
+        padding: 5px;
+    }
+
+    .planetTask{
+        margin:4% 0 4% 30%;
+        color:white;
+    }
+
+
+    .form select, .form input{
+        background: transparent;
+        color:white;
+    }
+
+    .form option{
+        background: transparent;
+        color:black;
+    }
+
+    .form button{
+        background: white;
+        color:black;
+    }
+
+
+}
+

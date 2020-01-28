@@ -1,0 +1,247 @@
+@font-face {
+    font-family: "StarWars";
+    src: url("../fonts/webfontkit-20200119-165610/sfdistantgalaxyalternateitalic-3rdm.woff");
+    src: url("../fonts/webfontkit-20200119-165610/sfdistantgalaxyalternateitalic-3rdm.woff2") format("woff");
+}
+
+
+html {
+    min-height: 100%;
+    overflow: hidden;
+}
+
+canvas {
+    display: block;
+    vertical-align: bottom;
+}
+
+
+
+body{
+    background: radial-gradient(#000, #222);
+    min-height: 100vh;
+}
+
+
+
+/* ---- particles.js container ---- */
+
+#particles-js {
+    position: relative;
+    margin: 0;
+    background-color: #17182f;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+}
+
+#app {
+    position: absolute;
+    background: transparent;
+}
+
+#starwars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+h4 {
+    color: white;
+    font-family: 'StarWars';
+
+
+}
+
+div{
+    font-family: 'StarWars';
+
+}
+span a {
+    font-size: 18px;
+    color: #cccccc;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: all 0.4s ease-in-out;
+
+}
+
+span a:hover {
+    color: #ffffff;
+}
+
+@keyframes float {
+    0% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+    }
+    50% {
+        box-shadow: 0 25px 15px 0px rgba(0, 0, 0, 0.2);
+        transform: translatey(-20px);
+    }
+    100% {
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+    }
+}
+
+.container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    /*justify-content: center;*/
+    /*align-items: center;*/
+}
+
+.character {
+    position: absolute;
+    top: 60%;
+    left: 15%;
+    z-index: 2;
+}
+
+.planet {
+    position: absolute;
+    top: 30%;
+    left: 75%;
+    z-index: 1;
+
+}
+
+.starship {
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    z-index: 1;
+
+}
+
+.planet2 {
+    position: absolute;
+    top: 110%;
+    left: 50%;
+    z-index: 1;
+
+}
+
+
+.avatar {
+    width: 150px;
+    height: 150px;
+    box-sizing: border-box;
+    border: 5px white solid;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+    transform: translatey(0px);
+    animation: float 6s ease-in-out infinite;
+}
+
+.avatar img {
+    width: 100%;
+    height: auto;
+}
+
+.content {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px 40px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#show_characters{
+    display: none;
+}
+#show_planets{
+    display: none;
+}
+#show_starships{
+    display: none;
+}
+
+@media only screen and (min-width: 768px) {
+
+    .avatar:hover + #show_characters {
+        display: block;
+        z-index: 2;
+        position: absolute;
+        left:-10%;
+        top:2%;
+    }
+    .avatar:hover + #show_planets {
+        display: block;
+        z-index: 2;
+    }
+    .avatar:hover + #show_starships {
+        display: block;
+        z-index: 2;
+
+    }
+}
+
+
+@media only screen and (max-width: 768px) {
+    .character {
+        position: absolute;
+        top: 60%;
+        left: 15%;
+        z-index: 2;
+    }
+
+    .planet {
+        position: absolute;
+        top: 25%;
+        left: 60%;
+        z-index: 1;
+
+    }
+
+
+
+    .starship {
+        position: absolute;
+        top: 15%;
+        left: 15%;
+        z-index: 1;
+
+    }
+
+    .avatar {
+        width: 30%;
+        height: 30%;
+        box-sizing: border-box;
+        border: 5px white solid;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+        transform: translatey(0px);
+        animation: float 6s ease-in-out infinite;
+    }
+
+    .avatar img {
+        width: 100%;
+        height: auto;
+    }
+
+    .content {
+        width: 100%;
+        max-width: 90%;
+        padding: 20px 40px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+
+    #show_characters,#show_planets,#show_starships{
+        display: none;
+    }
+
+
+}
