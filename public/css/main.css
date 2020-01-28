@@ -310,6 +310,10 @@ h1,p{
         display: none;
         position:absolute;
     }
+    
+    table{
+        color: white;
+    }
 
     .filter{
         margin:4% 0 4% 0;
